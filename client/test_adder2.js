@@ -1,12 +1,13 @@
 const add = require('./adder.js');
 
 class TestSuite {
-
 	runTest(testName) {
 		const result = this[testName]();
 		console.log(result , testName);
 	}
 	runTests(){
+		console.log(this);
+		console.log(Object.getPrototypeOf(this));
 		Object.getOwnPropertyNames(Object.getPrototypeOf(this))
 			.filter(prop => this[prop] instanceof Function)
 			.filter(prop => prop.indexOf('test') !== -1)

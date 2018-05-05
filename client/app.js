@@ -4,8 +4,9 @@ class ViewManager {
 
 	conectEventHandlers() {
 		//wire up event handler for form submit
+		//console.log(this); 
 		document.getElementById('form-numbers')
-			.addEventListener('submit', this.onSubmit);
+			.addEventListener('submit', this.onSubmit.bind(this));
 	}
 
 	onSubmit(event) {
@@ -25,8 +26,15 @@ class ViewManager {
 		const sum = add(num1, num2);
 
 		//output
-		alert(sum);
+		//alert(sum); sssssscccccxxxxsss
+		this.renderSum(sum);
+		//console.log(this);
 	}
+	
+	renderSum(sum) {
+		document.getElementById('sum').textContent = sum;
+	}
+
 }
 
 const viewManager = new ViewManager();
