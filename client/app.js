@@ -32,7 +32,7 @@ class ViewManager {
 	}
 	
 	renderSum(sum) {
-		document.getElementById('sum').textContent = sum;
+		document.querySelector('.sum').textContent = sum;
 	}
 
 }
