@@ -26,7 +26,7 @@ class ViewManager {
 		const sum = add(num1, num2);
 
 		//output
-		//alert(sum); sssssscccccxxxxsss
+		//alert(sum); testtesttest
 		this.renderSum(sum);
 		//console.log(this);
 	}
