@@ -5,8 +5,15 @@ class ViewManager {
 	conectEventHandlers() {
 		//wire up event handler for form submit
 		//console.log(this); 
-		document.getElementById('form-numbers')
-			.addEventListener('submit', this.onSubmit.bind(this));
+		var button1 = document.getElementsByName('button1')
+		for (var i=0;i<button1.length;i++){
+			button1[i].addEventListener("click", this.onSubmit.bind(this));
+		}
+		var button2 = document.getElementsByName('button2')
+		for (var i=0;i<button2.length;i++){
+			button2[i].addEventListener("click", this.onSubmit2.bind(this));
+		}
+//		aTags[1].addEventListener('click', this.onSubmit.bind(this));
 	}
 
 	onSubmit(event) {
@@ -30,7 +37,22 @@ class ViewManager {
 		this.renderSum(sum);
 		//console.log(this);
 	}
-	
+		
+
+		onSubmit2(event) {
+
+		// block form from actually submitting
+		event.preventDefault();
+
+		var i1 = document.createElement('input');
+		i1.setAttribute("type","text"); 
+		var br = document.createElement('br');
+		var list = document.getElementById('list');
+		list.appendChild(i1);
+		list.appendChild(br);
+	}
+
+
 	renderSum(sum) {
 		document.querySelector('.sum').textContent = sum;
 	}
